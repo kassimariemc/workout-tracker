@@ -4,8 +4,6 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3001;
 
-const db = require("./models");
-
 const app = express();
 
 app.use(logger("dev"));
@@ -15,23 +13,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+const db = require('./models');
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-app.get("/api/workouts", (req, res) => {
-
-});
-
-app.put("/api/workouts/:id", (req, res) => {
-
-});
-
-app.post("/api/workouts", (req, res) => {
-
-});
-
-app.get("/api/workouts/range", (req, res) => {
-
-});
+// Define routes
+app.use('/api', require('./routes/apiRoutes')(db));
+app.use(require('./routes/htmlRoutes')(db));
 
 // Start the server
 app.listen(PORT, () => {

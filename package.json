@@ -1,5 +1,5 @@
 {
-  "name": "mongoose_skeleton",
+  "name": "workout-tracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,7 +9,7 @@
     "watch": "nodemon server.js",
     "seed": "node seeders/seed.js"
   },
-  "author": "",
+  "author": "Kassi Stumb",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
