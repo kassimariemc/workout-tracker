@@ -13,13 +13,16 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const db = require('./models');
+const db = require('./models/Workout.js');
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 // Define routes
-app.use('/api', require('./routes/apiRoutes')(db));
-app.use(require('./routes/htmlRoutes')(db));
+app.use(require('./routes/apiRoutes.js')(db));
+app.use(require('./routes/htmlRoutes.js')(db));
 
 // Start the server
 app.listen(PORT, () => {
