@@ -41,7 +41,7 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-
+  // is this needed for anything??
   router.delete("/api/workouts", ({ body }, res) => {
     db.findByIdAndDelete(body.id);
   });

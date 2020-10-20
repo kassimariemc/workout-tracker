@@ -29,7 +29,7 @@ async function initExercise() {
   }
 
 }
-
+// should this be only when complete/add button clicked?
 initExercise();
 
 function handleWorkoutTypeChange(event) {

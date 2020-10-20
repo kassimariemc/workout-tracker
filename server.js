@@ -15,10 +15,15 @@ app.use(express.static("public"));
 
 const db = require('./models/Workout.js');
 
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/workout',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Define routes
 app.use(require('./routes/apiRoutes.js')(db));
