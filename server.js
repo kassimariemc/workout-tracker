@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 const db = require('./models/Workout.js');
 
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
