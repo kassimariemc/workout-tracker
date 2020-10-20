@@ -23,6 +23,10 @@ nav {
   font-size: 1.2rem;
 }
 
+.nav-link {
+  padding-left: 25px !important;
+}
+
 nav a:hover{
   opacity: 0.7;
 }
@@ -32,6 +36,7 @@ header {
   padding-top: 80px;
   text-align: center;
   font-size: 1.5rem;
+  background-color: rgba(212, 212, 212, 0.4);
 }
 
 header h1 {
