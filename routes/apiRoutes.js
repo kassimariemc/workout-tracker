@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-  // working
+  
   router.get("/api/workouts", (req, res) => {
     db.find({})
     .then(dbWorkout => {
@@ -11,7 +11,7 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-  // needs work
+  
   router.put("/api/workouts/:id", ({ body, params }, res) => {
     db.findByIdAndUpdate(params.id, { $push: { exercises: body } }, { new: true })
     .then(dbWorkout => {
@@ -21,7 +21,7 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-  // needs work
+  
   router.post("/api/workouts", (req, res) => {
     db.create({})
     .then(dbWorkout => {
@@ -31,9 +31,9 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-  // working
+  // should sort be descending to get most recent workouts?? 
   router.get("/api/workouts/range", (req, res) => {
-    db.find({}).limit(7)
+    db.find({}).sort({ day: 1 }).limit(7)
     .then(dbWorkout => {
       res.json(dbWorkout);
     })

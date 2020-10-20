@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Fitness Tracker</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Fitness Tracker <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/stats">Dashboard</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="wrapper workout">
+    <header>
+      <h1>Fitness Tracker</h1>
+    </header>
+    <div class="ui container workout">
+      <div class="ui raised card text-white bg-secondary m-auto">
+        <div class="prev-workout">
+          <h3>Last Workout</h3>
+          <div>
+            <div class="workout-stats"></div>
+            <div class="buttons">
+              <a id="continue-btn" href="/exercise?" type="button" class="huge ui button btn btn-secondary">Continue Workout</a>
+              <a href="/exercise" type="button" class="huge ui button btn btn-success">New Workout</a>
+            </div>
+          </div>
+        </div>
+        <div class="new-workout">
+          <h3>Create Your First Workout</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="toast">
+    Workout Added Successfully!
+  </div>
+  <script src="../js/api.js"></script>
+  <script src="../js/workout.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>
