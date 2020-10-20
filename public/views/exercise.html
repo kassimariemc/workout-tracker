@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
   <title>Fitness Tracker</title>
 </head>
@@ -30,10 +31,10 @@
   </nav>
   <div class="wrapper">
     <header>
-      <h1>Fitness Tracker</h1>
+      <h1 class="text-info">Fitness Tracker</h1>
     </header>
     <div class="ui container exercise">
-      <div class="ui raised card text-white bg-secondary m-auto">
+      <div class="ui raised card text-white bg-primary m-auto">
         <h2>Add Your Exercise</h2>
         <form action="POST">
           <div class="workout-type">
@@ -81,10 +82,10 @@
             </div>
           </div>
           <div class="buttons">
-            <button disabled class="huge ui button complete">
+            <button disabled class="huge ui button yellow complete">
               Complete
             </button>
-            <button disabled class="huge ui button add-another">
+            <button disabled class="huge ui button teal add-another">
               Add Exercise
             </button>
           </div>

@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
   <title>Fitness Tracker</title>
 </head>
@@ -30,17 +31,17 @@
   </nav>
   <div class="wrapper workout">
     <header>
-      <h1>Fitness Tracker</h1>
+      <h1 class="text-info">Fitness Tracker</h1>
     </header>
     <div class="ui container workout">
-      <div class="ui raised card text-white bg-secondary m-auto">
+      <div class="ui raised card text-white bg-primary m-auto">
         <div class="prev-workout">
           <h3>Last Workout</h3>
           <div>
             <div class="workout-stats"></div>
             <div class="buttons">
-              <a id="continue-btn" href="/exercise?" type="button" class="huge ui button btn btn-secondary">Continue Workout</a>
-              <a href="/exercise" type="button" class="huge ui button btn btn-success">New Workout</a>
+              <a id="continue-btn" href="/exercise?" class="huge button ui teal">Continue Workout</a>
+              <a href="/exercise" class="huge button ui yellow">New Workout</a>
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ body,
 }
 
 body {
-  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 nav {
@@ -21,14 +21,6 @@ nav {
   padding: 10px;
   line-height: 3;
   font-size: 1.2rem;
-}
-
-a,
-a:hover,
-a:active,
-a:visited {
-  text-decoration: none;
-  color: inherit;
 }
 
 nav a:hover{
@@ -98,7 +90,9 @@ input {
 }
 
 .wrapper {
-  background-color: #f2f8ff;
+  background-image: url('../images/bckgrnd.jpg');
+  background-size: cover;
+  background-position: center;
   padding-bottom: 100px;
 }
 
@@ -231,7 +225,7 @@ button {
   margin-top: 30px;
 }
 
-.buttons .ui.button {
+.buttons .huge.button {
   margin: 0;
   width: 50%;
 }
@@ -240,13 +234,13 @@ button {
   padding: 10px;
 }
 
-.buttons .ui.button:first-child {
+.buttons .huge.button:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.buttons .ui.button:nth-child(2) {
+.buttons .huge.button:nth-child(2) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0;
