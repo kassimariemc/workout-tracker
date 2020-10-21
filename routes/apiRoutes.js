@@ -3,7 +3,7 @@ const router = express.Router();
 const moment = require('moment');
 
 module.exports = (db) => {
-  
+  // Get all data
   router.get("/api/workouts", (req, res) => {
     db.find({})
     .then(dbWorkout => {
@@ -12,7 +12,7 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-  
+  // Add 1 exercise to specific workout by id
   router.put("/api/workouts/:id", ({ body, params }, res) => {
     db.findByIdAndUpdate(params.id, { $push: { exercises: body } }, { new: true })
     .then(dbWorkout => {
@@ -22,7 +22,7 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-  
+  // create new workout
   router.post("/api/workouts", (req, res) => {
     db.create({})
     .then(dbWorkout => {
@@ -32,7 +32,7 @@ module.exports = (db) => {
       res.json(err);
     });
   });
- 
+  // Get most recent 7 workouts, then send data starting with Sunday on to optimize chart
   router.get("/api/workouts/range", (req, res) => {
     db.find({}).sort({ day: -1 }).limit(7)
     .then(dbWorkout => {
@@ -53,7 +53,7 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-
+  // Delete any workouts in which the exercise data is empty
   router.delete("/api/workouts", (req, res) => {
     db.deleteMany({ exercises: [] })
     .then(dbWorkout => {

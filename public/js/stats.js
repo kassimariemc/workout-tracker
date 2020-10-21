@@ -2,7 +2,6 @@
 
 fetch("/api/workouts/range")
   .then(response => {
-    API.deleteEmptyWorkouts(response);
     return response.json();
   })
   .then(data => {

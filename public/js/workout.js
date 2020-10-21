@@ -1,8 +1,8 @@
 async function initWorkout() {
+  // Delete any empty workouts before getting last workout
   await API.deleteEmptyWorkouts();
   const lastWorkout = await API.getLastWorkout();
   
-  console.log("Last workout:", lastWorkout);
   if (lastWorkout) {
     document
       .querySelector("a[href='/exercise?']")
