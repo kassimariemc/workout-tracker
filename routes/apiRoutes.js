@@ -31,19 +31,15 @@ module.exports = (db) => {
       res.json(err);
     });
   });
-  // should sort be descending to get most recent workouts?? 
+ 
   router.get("/api/workouts/range", (req, res) => {
-    db.find({}).sort({ day: 1 }).limit(7)
+    db.find({}).limit(7)
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
     .catch(err => {
       res.json(err);
     });
-  });
-  // is this needed for anything??
-  router.delete("/api/workouts", ({ body }, res) => {
-    db.findByIdAndDelete(body.id);
   });
 
   return router;

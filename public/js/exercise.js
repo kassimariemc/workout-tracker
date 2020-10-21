@@ -29,8 +29,9 @@ async function initExercise() {
   }
 
 }
-// should this be only when complete/add button clicked?
+
 initExercise();
+
 
 function handleWorkoutTypeChange(event) {
   workoutType = event.target.value;
@@ -97,7 +98,7 @@ function validateInputs() {
 
 async function handleFormSubmit(event) {
   event.preventDefault();
-
+  
   let workoutData = {};
 
   if (workoutType === "cardio") {

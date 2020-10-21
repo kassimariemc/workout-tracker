@@ -16,14 +16,18 @@ app.use(express.static("public"));
 const db = require('./models/Workout.js');
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/workout',
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/workout',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false
   }
-);
+).then(() => {
+  console.log("Connected to Database");
+  }).catch((err) => {
+      console.log("Not Connected to Database ERROR! ", err);
+  });
 
 // Define routes
 app.use(require('./routes/apiRoutes.js')(db));
