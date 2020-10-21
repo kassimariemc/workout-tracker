@@ -41,4 +41,15 @@ const API = {
 
     return json;
   },
+
+  async deleteEmptyWorkouts() {
+    const res = await fetch("/api/workouts", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" }
+    });
+
+    const json = await res.json();
+
+    return json;
+  }
 };

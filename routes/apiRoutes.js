@@ -42,5 +42,15 @@ module.exports = (db) => {
     });
   });
 
+  router.delete("/api/workouts", (req, res) => {
+    db.deleteMany({ exercises: [] })
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+  });
+
   return router;
 }
