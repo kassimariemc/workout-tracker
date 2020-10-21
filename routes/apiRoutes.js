@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const moment = require('moment');
 
 module.exports = (db) => {
   
@@ -33,9 +34,20 @@ module.exports = (db) => {
   });
  
   router.get("/api/workouts/range", (req, res) => {
-    db.find({}).limit(7)
+    db.find({}).sort({ day: -1 }).limit(7)
     .then(dbWorkout => {
-      res.json(dbWorkout);
+      dbWorkout.reverse();
+      let startDay;
+      let data = [];
+      for (let i = 0; i < dbWorkout.length; i++) {
+        if(moment(dbWorkout[i].day).format('dddd') === 'Sunday') {
+          startDay = i;
+        }
+      }
+      for (let i = startDay; i < dbWorkout.length; i++) {
+        data.push(dbWorkout[i]);
+      }
+      res.json(data);
     })
     .catch(err => {
       res.json(err);

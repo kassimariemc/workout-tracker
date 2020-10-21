@@ -13,7 +13,7 @@ let workoutSeed = [
       {
         type: "resistance",
         name: "Bicep Curl",
-        duration: 20,
+        duration: 15,
         weight: 100,
         reps: 10,
         sets: 4
@@ -76,8 +76,8 @@ let workoutSeed = [
       {
         type: "resistance",
         name: "Bench Press",
-        duration: 20,
-        weight: 300,
+        duration: 10,
+        weight: 100,
         reps: 10,
         sets: 4
       }
@@ -90,7 +90,7 @@ let workoutSeed = [
         type: "resistance",
         name: "Quad Press",
         duration: 30,
-        weight: 300,
+        weight: 225,
         reps: 10,
         sets: 4
       }
@@ -102,9 +102,9 @@ let workoutSeed = [
       {
         type: "resistance",
         name: "Bench Press",
-        duration: 20,
-        weight: 300,
-        reps: 10,
+        duration: 22,
+        weight: 260,
+        reps: 12,
         sets: 4
       }
     ]
@@ -117,8 +117,19 @@ let workoutSeed = [
         name: "Military Press",
         duration: 20,
         weight: 300,
-        reps: 10,
+        reps: 12,
         sets: 4
+      }
+    ]
+  },
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 1)),
+    exercises: [
+      {
+        type: "cardio",
+        name: "Cycling",
+        duration: 45,
+        distance: 9
       }
     ]
   }
